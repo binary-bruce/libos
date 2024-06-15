@@ -1,10 +1,10 @@
-name: Build Rust Doc And Run tests
+name: Run tests
 
 on: [push]
 
 env:
   CARGO_TERM_COLOR: always
-  rust_toolchain: nightly-2024-01-18
+  rust_toolchain: nightly-2024-06-10
 
 jobs:
   run-tests:
@@ -46,4 +46,3 @@ jobs:
       - name: Run usertests
         run: cd os && make run TEST=1
         timeout-minutes: 10
-      

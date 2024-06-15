@@ -1,6 +1,6 @@
 OUTPUT_ARCH(riscv)
-ENTRY(_start)
-BASE_ADDRESS = 0x80200000;
+ENTRY(_start) /* entry point */
+BASE_ADDRESS = 0x80200000; /* the address that the os kernel resides */
 
 SECTIONS
 {

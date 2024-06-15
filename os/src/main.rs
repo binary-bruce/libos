@@ -5,7 +5,7 @@
 //! initialize various pieces of functionality [`clear_bss()`]. (See its source code for
 //! details.)
 //!
-//! We then call [`println!`] to display `Hello, world!`.
+//! We then call [`println!`] to display `Hello, libOS!`.
 
 #![deny(missing_docs)]
 #![deny(warnings)]
@@ -16,6 +16,7 @@
 use core::arch::global_asm;
 use log::*;
 
+// import macros from below crate
 #[macro_use]
 mod console;
 mod lang_items;
@@ -52,7 +53,7 @@ pub fn rust_main() -> ! {
     clear_bss();
     logging::init();
 
-    println!("[kernel] Hello libOS");
+    println!("[kernel] Hello libOS!");
 
     trace!(
         "[kernel] .text [{:#x}, {:#x})",
@@ -73,5 +74,6 @@ pub fn rust_main() -> ! {
     );
     error!("[kernel] .bss [{:#x}, {:#x})", sbss as usize, ebss as usize);
 
-    sbi::shutdown(false)
+    sbi::shutdown(false);
+    // panic!("Shutdown machine!"); // print `ERROR] [kernel] Panicked at src/main.rs:78 Shutdown machine!`
 }

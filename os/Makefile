@@ -13,10 +13,10 @@ endif
 # BOARD
 BOARD := qemu
 SBI ?= rustsbi
-BOOTLOADER := ../bootloader/$(SBI)-$(BOARD).bin
+BOOTLOADER := ../bootloader/$(SBI)-$(BOARD).bin # loaded by qemu at address 0x80000000
 
 # KERNEL ENTRY
-KERNEL_ENTRY_PA := 0x80200000
+KERNEL_ENTRY_PA := 0x80200000 # the starting address of the kernerl image
 
 # Binutils
 OBJDUMP := rust-objdump --arch-name=riscv64

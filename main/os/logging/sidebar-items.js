@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":["COLOR_BLUE","COLOR_BRIGHT_BLACK","COLOR_BRIGHT_YELLOW","COLOR_GREEN","COLOR_RED"],"fn":["init"],"struct":["SimpleLogger"]};

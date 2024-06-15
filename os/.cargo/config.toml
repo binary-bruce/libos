@@ -1,3 +1,6 @@
+[env]
+LOG = "TRACE"
+
 # For cross compile. With this config, it's not necessary to add `--target` for `cargo build`.
 [build]
 target = "riscv64gc-unknown-none-elf"
